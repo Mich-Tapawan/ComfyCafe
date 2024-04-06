@@ -8,3 +8,11 @@
     user-select: none;
     background-color: #fff;
 }
+
+.payment{
+    display: none;
+}
+
+.receipt{
+    display: none;
+}
