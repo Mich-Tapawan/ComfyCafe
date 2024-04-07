@@ -44,9 +44,9 @@
 #return{
     position: relative;
     transform: translateX(76vw);
+    color: #3B2929;
     top: 10px;
 }
-
 
 .side-bar{
     position: fixed;
