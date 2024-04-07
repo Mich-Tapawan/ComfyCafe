@@ -19,10 +19,12 @@
 }
 
 .line{
-    position: relative;
+    position: absolute;
     background-color: #3B2929;
     height: 2px;
-    width: 100%;
+    width: 110%;
+    left: 0px;
+    bottom: 88px;
     transform: translateY(90px);
 }
 
@@ -47,9 +49,22 @@
 
 
 .side-bar{
-    height: 100vh;
+    position: fixed;
+    height: 88.5vh;
     width: 20%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(13%);
+}
+
+.box{
+    flex: 1;
+    border: 1px solid #3B2929;
     background-color: #A1A1A1;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .payment{
