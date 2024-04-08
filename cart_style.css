@@ -63,6 +63,7 @@
     border: 1px solid #3B2929;
     background-color: #A1A1A1;
     color: #fff;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,8 +113,22 @@
     position: relative;
     left: 9%;
     top: 15.5%;
-    width: 550px;
+    width: 530px;
     color: #000000;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
+}
+
+#rcpt-return{
+    position: relative;
+    border: none;
+    width: 180px;
+    height: 78px;
+    border-radius:5px;
+    background-color: #3B2929;
+    color: #fff;
+    font-size: 28px;
+    transform: translateX(41vw);
+    top: 20%;
+    cursor: pointer;
 }
