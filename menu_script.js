@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+  //Customer Unique ID
+
+
   // Item category toggling
   let items = document.getElementById('beverages').getElementsByTagName('img');
   let labels = document.getElementById('beverages').getElementsByTagName('h4');
@@ -95,6 +98,15 @@ document.addEventListener("DOMContentLoaded", function () {
           total = currentPrice * count;
           totalText.textContent = `Total: ${total.toFixed(2)} USD`;
         }
+      });
+      
+      //Adding Item and making AJAX POST request to the server
+      document.querySelector('#addItem').addEventListener('click', ()=>{
+        let order = {customerId: 'hewwo', item: currentItem.label, price: total, quantity: count, size: radio.value};
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://localhost:3000/insert_data', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(order));
       });
 
       document.querySelector('.order').style.display = 'block';
