@@ -16,6 +16,7 @@
     height: 90px;
     padding: 10px 20px;
     align-content: center;
+    z-index: 1000;
 }
 
 .line{
@@ -67,10 +68,52 @@
     justify-content: center;
 }
 
+.view-order{
+    display: none;
+}
+
 .payment{
     display: none;
 }
 
 .receipt{
-    display: none;
+    display: flex;
+    flex-direction: column;
+    width: 80wh;
+    height: 100vh;
+    align-items: center;
+}
+
+.receipt h3{
+    position: relative;
+    left: 9%;
+    top: 15%;
+    color: #1ECB1B;
+    font-size: 40px;
+}
+
+.receipt img{
+    left: 9%;
+    top: 15%;
+    position: relative;
+    width: 250px;
+}
+
+#transID{
+    position: relative;
+    left: 9%;
+    top: 15%;
+    color: #BBBBBB;
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#ty{
+    position: relative;
+    left: 9%;
+    top: 15.5%;
+    width: 550px;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
 }
