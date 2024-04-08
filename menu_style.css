@@ -227,6 +227,7 @@ input[type="radio"]:checked+label{
     top: 350px;
     left: 220px;
     background-color: #868686;
+    text-align: center;
     width: 150px;
     height: 40px;
     border: none;
