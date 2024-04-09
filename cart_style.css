@@ -74,11 +74,23 @@
 }
 
 .payment{
-    display: none;
+    display: flex;
+    width: 80wh;
+    height: 100vh;
+    background-color: blue;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment input{
+    position: relative;
+    left: 50%;
+    width: 100px;
+    height: 50px;
 }
 
 .receipt{
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 80wh;
     height: 100vh;
