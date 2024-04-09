@@ -125,6 +125,32 @@
     width: 40%;
 }
 
+.method-container{
+    display: flex;
+    width: 100%;
+    height: 40vh;
+}
+
+.method-container h4{
+    display: block;
+    width: 200px;
+}
+#method{
+    display: flex;
+    position: relative;
+    width: 90%;
+    height: 50%;
+    top:100%;
+    right: 100px;
+    justify-content:space-between;
+}
+
+#method img{
+    position: relative;
+    width: 200px;
+    height: 100px;
+}
+
 .receipt{
     display: none;
     flex-direction: column;
