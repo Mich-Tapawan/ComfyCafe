@@ -86,30 +86,43 @@
     position: relative;
     width: 50%;
     height: 50%;
-    top: 20%;
+    top: 15%;
     
 }
 
 .payment form div{
     display: flex;
     flex: 1;
-    width: 100%;
+    width: 1000px;
     background-color: #1ECB1B;
     align-items: center;
 }
 
 .payment form h3{
-    width: 200px;
+    font-size: 20px;
+    width: 150px;
+    background-color: blue;
 }
 
 .payment input{
-    position: relative;
     left: 50%;
-    width: 500px;
     height: 50px;
     border-style: none;
     border-radius: 2%;
     background-color: #D9D9D9;
+}
+
+#payment-line1 input{
+    width: 100%;
+}
+
+#house-no{
+    width: 20%;
+    margin-right: 5px;
+}
+
+#street{
+    width: 40%;
 }
 
 .receipt{
