@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
       //Adding Item and making AJAX POST request to the server
       document.querySelector('#addItem').addEventListener('click', ()=>{
-        let order = {customerId: 'hewwo', item: currentItem.label, price: total, quantity: count, size: radio.value};
+        let order = {customerId: 'hewwo', item:'gyattt', price: 5, quantity: 2, size: 'medium'};
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'https://localhost:3000/insert_data', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
