@@ -18,8 +18,12 @@ body {
   background-position: center;
 }
 
-.main-h1 {
+.sec1 h1 {
   color: var(--secondary);
+}
+
+.sec1 p {
+  width: 45%;
 }
 
 .banner {
