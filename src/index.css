@@ -21,3 +21,12 @@ body {
 .main-h1 {
   color: var(--secondary);
 }
+
+.banner {
+  font-family: "Poppins", "serif";
+  background-color: var(--secondary);
+}
+
+.hours {
+  font-family: "Inknut Antiqua", "Poppins";
+}
