@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #3b2929;
+  --secondary: #fdea9b;
+}
+
 body {
   font-family: "Inknut Antiqua", "Poppins";
+}
+
+.sec1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/public/assets/main-bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.main-h1 {
+  color: var(--secondary);
 }
