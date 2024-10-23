@@ -9,7 +9,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed flex w-full py-2 h-20 px-5 md:px-20 lg:px-36 justify-between text-white items-center">
+    <nav className="fixed flex w-full py-2 h-20 px-5 md:px-20 lg:px-36 justify-between text-white items-center z-50">
       <div className="brand flex gap-2 md:gap-4 items-center">
         <div className="w-14 md:w-16">
           <img
