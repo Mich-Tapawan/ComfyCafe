@@ -2,11 +2,12 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Banner from "../components/Banner";
 import CtaButton from "../components/CtaButton";
 import SocialIcons from "../components/SocialIcons";
+import LearnMore from "../components/LearnMore";
 
 export default function Home() {
   return (
     <div className="sec1 w-full h-svh">
-      <Parallax pages={3}>
+      <Parallax pages={4}>
         <ParallaxLayer>
           <div className="flex flex-col text-white text-center items-center mt-32 lg:mt-44">
             <span className="mb-4 text-lg">START YOUR DAY WITH ONLY THE</span>
@@ -44,6 +45,14 @@ export default function Home() {
         </ParallaxLayer>
         <ParallaxLayer offset={1}>
           <Banner />
+        </ParallaxLayer>
+        <ParallaxLayer offset={1.5}>
+          <div className=" w-full h-full py-36 px-5 md:px-20 lg:px-36 place-self-center ">
+            <div className="bg-primary w-full h-full"></div>
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={2.5}>
+          <LearnMore />
         </ParallaxLayer>
       </Parallax>
     </div>
