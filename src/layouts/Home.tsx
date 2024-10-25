@@ -3,11 +3,12 @@ import Banner from "../components/Banner";
 import CtaButton from "../components/CtaButton";
 import SocialIcons from "../components/SocialIcons";
 import LearnMore from "../components/LearnMore";
+import ImageGrid from "../components/ImageGrid";
 
 export default function Home() {
   return (
     <div className="sec1 w-full h-svh">
-      <Parallax pages={4}>
+      <Parallax pages={5}>
         <ParallaxLayer>
           <div className="flex flex-col text-white text-center items-center mt-32 lg:mt-44">
             <span className="mb-4 text-lg">START YOUR DAY WITH ONLY THE</span>
@@ -53,6 +54,7 @@ export default function Home() {
         </ParallaxLayer>
         <ParallaxLayer offset={2.5}>
           <LearnMore />
+          <ImageGrid />
         </ParallaxLayer>
       </Parallax>
     </div>
