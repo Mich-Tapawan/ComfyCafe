@@ -4,6 +4,7 @@ import CtaButton from "../components/CtaButton";
 import SocialIcons from "../components/SocialIcons";
 import LearnMore from "../components/LearnMore";
 import ImageGrid from "../components/ImageGrid";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -55,6 +56,7 @@ export default function Home() {
         <ParallaxLayer offset={2.5}>
           <LearnMore />
           <ImageGrid />
+          <Footer />
         </ParallaxLayer>
       </Parallax>
     </div>
