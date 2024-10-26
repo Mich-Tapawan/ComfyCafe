@@ -18,6 +18,10 @@ body {
   background-position: center;
 }
 
+.hero {
+  top: 6vh;
+}
+
 .sec1 h1 {
   color: var(--secondary);
 }
@@ -50,11 +54,25 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .hero {
+    top: 5vh;
+  }
+
   .sec1 p {
     width: 45%;
   }
 
   .sec1 .icons {
     left: 90%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero {
+    top: 12vh;
+  }
+
+  .sec1 p {
+    width: 45%;
   }
 }
