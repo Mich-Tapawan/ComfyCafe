@@ -1,15 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Burger from "./Burger";
 
 export default function Navbar() {
   const [isNavShown, setIsNavShown] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleNav = () => {
     setIsNavShown(!isNavShown);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      console.log(currentScrollY);
+      console.log(isScrolled);
+
+      setIsScrolled(currentScrollY > 0);
+    };
+
+    console.log("Navbar mounted. Adding scroll event listener.");
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      console.log("Cleaning up scroll event listener.");
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isScrolled]);
+
   return (
-    <nav className="fixed flex w-full py-2 h-20 px-5 md:px-20 lg:px-36 justify-between text-white items-center z-50">
+    <nav
+      className={`fixed flex w-full py-2 h-20 px-5 md:px-20 lg:px-36 justify-between text-white items-center z-50 ${
+        isScrolled ? "bg-primary" : "bg-transparent"
+      }`}
+    >
       <div className="brand flex gap-2 md:gap-4 items-center">
         <div className="w-14 md:w-16">
           <img
