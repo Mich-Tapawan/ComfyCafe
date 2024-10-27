@@ -5,11 +5,28 @@ import SocialIcons from "../components/SocialIcons";
 import LearnMore from "../components/LearnMore";
 import ImageGrid from "../components/ImageGrid";
 import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [pages, setPages] = useState(7);
+
+  useEffect(() => {
+    const updatePages = () => {
+      const vh = window.innerHeight;
+      const contentHeight = document.querySelector(".sec1")?.scrollHeight || 0;
+      setPages(Math.ceil(contentHeight / vh));
+    };
+
+    updatePages();
+
+    window.addEventListener("resize", updatePages);
+
+    return window.removeEventListener("resize", updatePages);
+  }, []);
+
   return (
     <div className="sec1 w-full h-svh">
-      <Parallax pages={5}>
+      <Parallax pages={pages}>
         <ParallaxLayer>
           <div className="hero flex flex-col text-white text-center items-center mt-32 lg:mt-44 absolute">
             <span className="mb-4 text-lg">START YOUR DAY WITH ONLY THE</span>
