@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Burger from "./Burger";
 
 export default function Navbar() {
@@ -48,10 +49,20 @@ export default function Navbar() {
           isNavShown ? "flex" : "hidden"
         } lg:flex flex-col lg:flex-row gap-8 h-fit`}
       >
-        <li>Home</li>
-        <li>Menu</li>
-        <li>Contact</li>
-        <li>About</li>
+        <li>
+          <Link to={"/"}>Home</Link>
+        </li>
+        <li>
+          <Link to={"/menu"}>Menu</Link>
+        </li>
+        <li>
+          {" "}
+          <Link to={"/contact"}>Contact</Link>
+        </li>
+        <li>
+          {" "}
+          <Link to={"/about"}>About</Link>
+        </li>
       </ul>
       <Burger onClick={toggleNav} />
     </nav>
