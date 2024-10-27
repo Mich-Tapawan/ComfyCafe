@@ -34,10 +34,10 @@ interface props {
 
 export default function SocialIcons({ custom, lgDirection }: props) {
   return (
-    <div className={`${custom} mt-8`}>
+    <div className={`${custom} mt-8 lg:mt-0`}>
       <ul className={`flex ${lgDirection} gap-4 lg:gap-0`}>
         {socials.map(({ link, img, alt }, index) => (
-          <li key={index} className="mb-4">
+          <li key={index} className="mb-4 lg:mr-4">
             <a href={link} target="_blank">
               <div className="w-12">
                 <img src={img} alt={alt} className="object-cover w-full" />

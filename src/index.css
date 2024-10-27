@@ -77,4 +77,8 @@ body {
   .sec1 p {
     width: 45%;
   }
+
+  .ftr-list {
+    gap: 40%;
+  }
 }
