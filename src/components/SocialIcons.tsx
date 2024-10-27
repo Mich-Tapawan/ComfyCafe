@@ -27,10 +27,15 @@ const socials: SocialIcon[] = [
   },
 ];
 
-export default function SocialIcons() {
+interface props {
+  custom: string;
+  lgDirection?: string;
+}
+
+export default function SocialIcons({ custom, lgDirection }: props) {
   return (
-    <div className="icons mt-8 lg:absolute">
-      <ul className="flex lg:flex-col gap-4 lg:gap-0">
+    <div className={`${custom} mt-8`}>
+      <ul className={`flex ${lgDirection} gap-4 lg:gap-0`}>
         {socials.map(({ link, img, alt }, index) => (
           <li key={index} className="mb-4">
             <a href={link} target="_blank">

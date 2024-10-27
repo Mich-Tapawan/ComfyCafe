@@ -64,6 +64,7 @@ body {
   }
 
   .sec1 .icons {
+    position: absolute;
     left: 90%;
   }
 }

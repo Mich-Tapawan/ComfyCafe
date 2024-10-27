@@ -42,7 +42,7 @@ export default function Home() {
                 ABOUT
               </CtaButton>
             </div>
-            <SocialIcons />
+            <SocialIcons custom="icons" lgDirection="lg:flex-col" />
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={1}>
