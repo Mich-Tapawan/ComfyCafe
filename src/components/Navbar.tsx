@@ -19,14 +19,16 @@ export default function Navbar() {
       setIsScrolled(currentScrollY > 0);
     };
 
-    console.log("Navbar mounted. Adding scroll event listener.");
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      console.log("Cleaning up scroll event listener.");
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isScrolled]);
+
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <nav
@@ -49,17 +51,29 @@ export default function Navbar() {
           isNavShown ? "flex" : "hidden"
         } lg:flex flex-col lg:flex-row gap-8 h-fit`}
       >
-        <li>
+        <li
+          className="hover:text-primary hover:bg-white rounded-xl px-4 text-center"
+          onClick={handleClick}
+        >
           <Link to={"/"}>Home</Link>
         </li>
-        <li>
+        <li
+          className="hover:text-primary hover:bg-white rounded-xl px-4 text-center"
+          onClick={handleClick}
+        >
           <Link to={"/menu"}>Menu</Link>
         </li>
-        <li>
+        <li
+          className="hover:text-primary hover:bg-white rounded-xl px-4 text-center"
+          onClick={handleClick}
+        >
           {" "}
           <Link to={"/contact"}>Contact</Link>
         </li>
-        <li>
+        <li
+          className="hover:text-primary hover:bg-white rounded-xl px-4 text-center"
+          onClick={handleClick}
+        >
           {" "}
           <Link to={"/about"}>About</Link>
         </li>
