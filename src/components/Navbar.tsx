@@ -32,7 +32,7 @@ export default function Navbar() {
     <nav
       className={`fixed flex w-full py-2 h-20 px-5 md:px-20 lg:px-36 justify-between text-white items-center z-50 ${
         isScrolled ? "bg-primary" : "bg-transparent"
-      }`}
+      } transition ease-in-out duration-200`}
     >
       <div className="brand flex gap-2 md:gap-4 items-center">
         <div className="w-14 md:w-16">
