@@ -3,23 +3,23 @@ import CtaButton from "../components/CtaButton";
 export default function LearnMore() {
   return (
     <div
-      className="w-full py-5 md:py-14 bg-primary text-white flex flex-col lg:flex-row px-5 md:px-20 lg:px-36 items-center gap-16"
+      className="learnmore w-full py-5 md:py-14 lg:py-24 bg-primary text-white flex flex-col lg:flex-row px-5 md:px-20 lg:px-36 gap-16 justify-center"
       style={{ minHeight: "600px" }}
     >
-      <div className="">
+      <div className="lm-img">
         <img
           src="/assets/main-portrait.png"
           alt=""
-          className="object-cover w-full rounded-lg"
+          className="object-cover w-full h-full rounded-lg"
         />
       </div>
-      <div
-        className="hidden lg:block border h-full"
-        style={{ height: "500px" }}
-      ></div>
-      <div className=" w-full h-full">
-        <h3 className="text-5xl mb-8">FEELIN' COZY!</h3>
-        <p className="font-light mb-5 leading-10" style={{ width: "100%" }}>
+      <div className="vl hidden lg:block border h-full"></div>
+      <div className=" lg:w-2/4 h-full">
+        <h3 className="text-5xl lg:text-6xl mb-8">FEELIN' COZY!</h3>
+        <p
+          className="t mb-5 leading-7 md:leading-10 lg:text-xl lg:font-ligh"
+          style={{ width: "100%" }}
+        >
           Start your day with us here at Comfy Café and enjoy various delicious
           pastries paired with a freshly brewed coffee. Wanna chill like a Vil?
           Hangout in our place filled with aesthetic and minimalist designs.
