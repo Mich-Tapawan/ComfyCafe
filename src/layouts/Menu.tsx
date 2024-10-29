@@ -8,8 +8,8 @@ export default function Menu() {
   const [onHotSection, setOnHotSection] = useState(true);
 
   return (
-    <div className="menu h-fit lg:h-svh pt-24 pb-10 px-5 md:px-20 lg:px-36">
-      <div className="bg-secondary w-full h-full py-14 px-5 md:px-20 lg:px-36 overflow-hidden">
+    <div className="menu h-svh pt-24 pb-10 px-5 md:px-20 lg:px-36">
+      <div className="bg-secondary w-full h-full py-14 px-5 md:px-10 lg:px-20 overflow-hidden">
         <div className="flex justify-between mb-10">
           <h1 className="text-5xl font-bold items-center">MENU</h1>
           <div className="w-14">
@@ -23,7 +23,7 @@ export default function Menu() {
         <div className="flex gap-5 lg:gap-16">
           <MenuContext.Provider value={{ onHotSection, setOnHotSection }}>
             <SideBar />
-            <div className="menu-vl"></div>
+            <div className="menu-vl hidden lg:block"></div>
             {onHotSection ? <HotItems /> : <ProductList />}
           </MenuContext.Provider>
         </div>

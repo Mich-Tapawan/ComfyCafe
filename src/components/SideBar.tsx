@@ -19,7 +19,7 @@ export default function SideBar() {
   };
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="hidden md:flex flex-col gap-5">
       <span
         className="font-bold text-2xl my-2 cursor-pointer"
         onClick={() => {
