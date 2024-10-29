@@ -60,6 +60,23 @@ body {
   transition: all ease-in 0.3s;
 }
 
+.menu {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/menu-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.menu-vl {
+  border: 1px solid var(--primary);
+}
+
+.hr {
+  width: 100%;
+  border: 1px solid var(--primary);
+}
+
 .contact {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/assets/main-lights.jpg");
