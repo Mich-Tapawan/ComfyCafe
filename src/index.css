@@ -77,14 +77,14 @@ body {
   border: 1px solid var(--primary);
 }
 
-.hotItems::-webkit-scrollbar {
+.Items::-webkit-scrollbar {
   width: 15px;
 }
-.hotItems::-webkit-scrollbar-track {
+.Items::-webkit-scrollbar-track {
   background-color: #d8cb98;
 }
 
-.hotItems::-webkit-scrollbar-thumb {
+.Items::-webkit-scrollbar-thumb {
   background-color: var(--primary);
 }
 
