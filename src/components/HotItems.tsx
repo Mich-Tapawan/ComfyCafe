@@ -1,21 +1,48 @@
+import { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
 
-const sale = ["black", "affogato", "mocha", "choco"];
-const limited = ["black", "affogato", "mocha", "choco"];
-const best = ["black", "affogato", "mocha", "choco"];
+// const sale = ["black", "affogato", "mocha", "choco"];
+// const limited = ["black", "affogato", "mocha", "choco"];
+// const best = ["black", "affogato", "mocha", "choco"];
 
-type HotItem = {
-  title: string;
-  items: string[];
+type HotItemsData = {
+  sale: [];
+  limited: [];
+  best: [];
 };
 
-const hotItem: HotItem[] = [
-  { title: "ON SALE", items: sale },
-  { title: "LIMITED TIME", items: limited },
-  { title: "BEST SELLERS", items: best },
-];
-
 export default function HotItems() {
+  const [products, setProducts] = useState<HotItemsData>({
+    sale: [],
+    limited: [],
+    best: [],
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetch("http://localhost:3000/test");
+        if (!result.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await result.json();
+        console.log(data);
+        setProducts(data);
+      } catch (error) {
+        console.log("Error fetching data: " + error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const hotItem = [
+    { title: "ON SALE", items: products.sale },
+    { title: "LIMITED TIME", items: products.limited },
+    { title: "BEST SELLERS", items: products.best },
+  ];
+
   return (
     <ul className="Items w-full max-h-80 lg:max-h-[60vh] overflow-y-scroll">
       {hotItem.map(({ title, items }, index) => (

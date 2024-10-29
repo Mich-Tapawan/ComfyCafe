@@ -1,9 +1,16 @@
 import express, { Request, Response } from "express";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
+app.use(express.json());
 
 app.get("/test", (req: Request, res: Response) => {
-  res.json({ users: ["userOne", "userTwo", "userThree"] });
+  res.json({
+    sale: ["black", "affogato", "mocha", "choco"],
+    limited: ["black", "affogato", "mocha", "choco"],
+    best: ["black", "affogato", "mocha", "choco"],
+  });
   console.log("Test request success");
 });
 
