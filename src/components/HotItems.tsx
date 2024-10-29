@@ -15,7 +15,7 @@ const hotItem: HotItem[] = [
 
 export default function HotItems() {
   return (
-    <ul className="w-full max-h-80 lg:max-h-[60vh] overflow-y-scroll">
+    <ul className="hotItems w-full max-h-80 lg:max-h-[60vh] overflow-y-scroll">
       {hotItem.map(({ title, items }, index) => (
         <li key={index} className="mb-10">
           <div>

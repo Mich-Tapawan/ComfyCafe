@@ -73,8 +73,19 @@ body {
 }
 
 .hr {
-  width: 100%;
+  width: 95%;
   border: 1px solid var(--primary);
+}
+
+.hotItems::-webkit-scrollbar {
+  width: 15px;
+}
+.hotItems::-webkit-scrollbar-track {
+  background-color: #d8cb98;
+}
+
+.hotItems::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
 }
 
 .contact {
