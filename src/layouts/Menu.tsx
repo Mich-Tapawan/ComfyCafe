@@ -1,7 +1,12 @@
+import { useState } from "react";
 import HotItems from "../components/HotItems";
 import SideBar from "../components/SideBar";
+import ProductList from "../components/ProductList";
+import { MenuContext } from "../contexts/MenuContext";
 
 export default function Menu() {
+  const [onHotSection, setOnHotSection] = useState(true);
+
   return (
     <div className="menu h-fit lg:h-svh pt-24 pb-10 px-5 md:px-20 lg:px-36">
       <div className="bg-secondary w-full h-full py-14 px-5 md:px-20 lg:px-36 overflow-hidden">
@@ -16,9 +21,11 @@ export default function Menu() {
           </div>
         </div>
         <div className="flex gap-5 lg:gap-16">
-          <SideBar />
-          <div className="menu-vl"></div>
-          <HotItems />
+          <MenuContext.Provider value={{ onHotSection, setOnHotSection }}>
+            <SideBar />
+            <div className="menu-vl"></div>
+            {onHotSection ? <HotItems /> : <ProductList />}
+          </MenuContext.Provider>
         </div>
       </div>
     </div>
