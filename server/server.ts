@@ -1,13 +1,17 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import { MongoClient, ServerApiVersion } from "mongodb";
+import "dotenv/config";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const uri =
-  "mongodb+srv://root:BP9Y7Jka77b20XTn@cluster0.z6r3k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.MONGODB_URI;
+
+if (!uri) {
+  throw new Error("Error loading URI");
+}
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {

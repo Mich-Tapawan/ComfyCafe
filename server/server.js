@@ -15,10 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const mongodb_1 = require("mongodb");
+require("dotenv/config");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
-const uri = "mongodb+srv://root:BP9Y7Jka77b20XTn@cluster0.z6r3k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.MONGODB_URI;
+if (!uri) {
+    throw new Error("Error loading URI");
+}
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new mongodb_1.MongoClient(uri, {
     serverApi: {
