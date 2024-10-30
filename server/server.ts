@@ -43,7 +43,7 @@ app.get("/productList", (req: Request, res: Response) => {
       "choco",
     ],
   });
-  console.log("hot items request successful");
+  console.log("product list request successful");
 });
 
 app.listen(3000, () => {

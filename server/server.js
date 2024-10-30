@@ -45,7 +45,7 @@ app.get("/productList", (req, res) => {
             "choco",
         ],
     });
-    console.log("hot items request successful");
+    console.log("product list request successful");
 });
 app.listen(3000, () => {
     console.log("Server running at PORT 3000");
