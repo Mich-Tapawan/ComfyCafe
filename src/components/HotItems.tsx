@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
 
-// const sale = ["black", "affogato", "mocha", "choco"];
-// const limited = ["black", "affogato", "mocha", "choco"];
-// const best = ["black", "affogato", "mocha", "choco"];
-
 type HotItemsData = {
   sale: [];
   limited: [];
@@ -21,7 +17,7 @@ export default function HotItems() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await fetch("http://localhost:3000/test");
+        const result = await fetch("http://localhost:3000/hotItems");
         if (!result.ok) {
           throw new Error("Network response was not ok");
         }
