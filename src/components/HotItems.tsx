@@ -1,12 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import ProductItem from "./ProductItem";
 import { MenuContext } from "../contexts/MenuContext";
-
-type HotItemsData = {
-  sale: [];
-  limited: [];
-  best: [];
-};
 
 export default function HotItems() {
   const menuContext = useContext(MenuContext);
