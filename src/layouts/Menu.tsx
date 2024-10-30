@@ -1,11 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HotItems from "../components/HotItems";
 import SideBar from "../components/SideBar";
 import ProductList from "../components/ProductList";
 import { MenuContext } from "../contexts/MenuContext";
 
+type ProductListData = {
+  sale: [];
+  limited: [];
+  best: [];
+  allItems: [];
+};
+
 export default function Menu() {
   const [onHotSection, setOnHotSection] = useState(true);
+  const [productList, setProductsList] = useState<ProductListData>({
+    sale: [],
+    limited: [],
+    best: [],
+    allItems: [],
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetch("http://localhost:3000/getItems");
+        if (!result.ok) {
+          throw new Error("Network was not ok.");
+        }
+        const data = await result.json();
+        setProductsList(data);
+        console.log(data);
+      } catch (error) {
+        console.log("Error fetching data: " + error);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="menu h-svh pt-24 pb-10 px-5 md:px-20 lg:px-36">
@@ -21,7 +51,14 @@ export default function Menu() {
           </div>
         </div>
         <div className="flex gap-5 lg:gap-16">
-          <MenuContext.Provider value={{ onHotSection, setOnHotSection }}>
+          <MenuContext.Provider
+            value={{
+              onHotSection,
+              setOnHotSection,
+              productList,
+              setProductsList,
+            }}
+          >
             <SideBar />
             <div className="menu-vl hidden lg:block"></div>
             {onHotSection ? <HotItems /> : <ProductList />}

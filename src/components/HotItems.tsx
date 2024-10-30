@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
+import { MenuContext } from "../contexts/MenuContext";
 
 type HotItemsData = {
   sale: [];
@@ -8,35 +9,18 @@ type HotItemsData = {
 };
 
 export default function HotItems() {
-  const [products, setProducts] = useState<HotItemsData>({
-    sale: [],
-    limited: [],
-    best: [],
-  });
+  const menuContext = useContext(MenuContext);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await fetch("http://localhost:3000/hotItems");
-        if (!result.ok) {
-          throw new Error("Network response was not ok");
-        }
+  if (!menuContext) {
+    throw new Error("SideBar must be used within a MenuContext.Provider");
+  }
 
-        const data = await result.json();
-        console.log(data);
-        setProducts(data);
-      } catch (error) {
-        console.log("Error fetching data: " + error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { productList } = menuContext;
 
   const hotItem = [
-    { title: "ON SALE", items: products.sale },
-    { title: "LIMITED TIME", items: products.limited },
-    { title: "BEST SELLERS", items: products.best },
+    { title: "ON SALE", items: productList.sale },
+    { title: "LIMITED TIME", items: productList.limited },
+    { title: "BEST SELLERS", items: productList.best },
   ];
 
   return (

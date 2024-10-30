@@ -1,34 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
-
-type Product = {
-  products: [];
-};
+import { MenuContext } from "../contexts/MenuContext";
 
 export default function ProductList() {
-  const [products, setProducts] = useState<Product>({
-    products: [],
-  });
+  const menuContext = useContext(MenuContext);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await fetch("http://localhost:3000/productList");
-        if (!result.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await result.json();
-        setProducts(data);
-      } catch (error) {
-        console.log("Error fetching data: " + error);
-      }
-    };
-    fetchData();
-  }, []);
+  if (!menuContext) {
+    throw new Error("SideBar must be used within a MenuContext.Provider");
+  }
+
+  const { productList } = menuContext;
 
   return (
     <ul className="Items md:max-h-[80vh] lg:max-h-[60vh] flex flex-wrap gap-8 overflow-y-scroll">
-      {products.products.map((item, index) => (
+      {productList.allItems.map((item, index) => (
         <li key={index} className="w-fit">
           <ProductItem item={item} />
         </li>

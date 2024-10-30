@@ -5,26 +5,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/hotItems", (req: Request, res: Response) => {
+app.get("/getItems", (req: Request, res: Response) => {
   res.json({
     sale: ["black", "affogato", "mocha", "choco"],
     limited: ["black", "affogato", "mocha", "choco"],
     best: ["black", "affogato", "mocha", "choco"],
-  });
-  console.log("hot items request successful");
-});
-
-app.get("/productList", (req: Request, res: Response) => {
-  res.json({
-    products: [
-      "black",
-      "affogato",
-      "mocha",
-      "choco",
-      "black",
-      "affogato",
-      "mocha",
-      "choco",
+    allItems: [
       "black",
       "affogato",
       "mocha",
@@ -43,7 +29,7 @@ app.get("/productList", (req: Request, res: Response) => {
       "choco",
     ],
   });
-  console.log("product list request successful");
+  console.log("Items request successful");
 });
 
 app.listen(3000, () => {
