@@ -1,11 +1,11 @@
 type item = {
   item: {
-    name: "";
-    img: "";
-    price: "";
-    category: "";
-    specialty: "";
-    availability: "";
+    name: string;
+    img: string;
+    price: string;
+    category: string;
+    specialty: string;
+    availability: string;
   };
 };
 

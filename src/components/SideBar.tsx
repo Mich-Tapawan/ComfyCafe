@@ -11,11 +11,12 @@ export default function SideBar() {
     throw new Error("SideBar must be used within a MenuContext.Provider");
   }
 
-  const { onHotSection, setOnHotSection } = menuContext;
+  const { setOnHotSection, setCategory } = menuContext;
 
   const handleClick = (item: string) => {
     setOnHotSection(false);
-    console.log(item);
+    setCategory(item);
+    console.log("clicked on item: " + item);
   };
 
   return (
