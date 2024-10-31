@@ -1,18 +1,25 @@
 type item = {
-  item: string;
+  item: {
+    name: string;
+    img: string;
+    price: string;
+    category: string;
+    specialty: string;
+    availability: string;
+  };
 };
 
 export default function ProductItem({ item }: item) {
   return (
     <div className="cursor-pointer">
-      <div className="w-28 lg:w-36 mb-2">
+      <div className="w-28 lg:w-36 h-full mb-2">
         <img
-          src={`assets/menu/${item}.png`}
-          alt={item}
-          className="object-cover w-full rounded-full"
+          src={`assets/menu/${item.img}`}
+          alt={item.name}
+          className="object-cover w-full rounded-full h-36"
         />
       </div>
-      <h5 className="text-center font-bold">{item.toUpperCase()}</h5>
+      <h5 className="text-center font-bold">{item.name.toUpperCase()}</h5>
     </div>
   );
 }

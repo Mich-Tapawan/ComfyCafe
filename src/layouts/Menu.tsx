@@ -4,12 +4,22 @@ import SideBar from "../components/SideBar";
 import ProductList from "../components/ProductList";
 import { MenuContext } from "../contexts/MenuContext";
 
-type ProductListData = {
-  sale: [];
-  limited: [];
-  best: [];
-  allItems: [];
-};
+interface ProductItemType {
+  _id: string;
+  name: string;
+  price: string;
+  category: string;
+  specialty: string;
+  availability: string;
+  img: string;
+}
+
+interface ProductListData {
+  sale: ProductItemType[];
+  limited: ProductItemType[];
+  best: ProductItemType[];
+  allItems: ProductItemType[];
+}
 
 export default function Menu() {
   const [onHotSection, setOnHotSection] = useState(true);
@@ -19,7 +29,9 @@ export default function Menu() {
     best: [],
     allItems: [],
   });
+  const [category, setCategory] = useState("");
 
+  // Fetch data to get all available items
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -57,6 +69,8 @@ export default function Menu() {
               setOnHotSection,
               productList,
               setProductsList,
+              category,
+              setCategory,
             }}
           >
             <SideBar />
