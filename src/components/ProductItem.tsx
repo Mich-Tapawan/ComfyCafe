@@ -16,10 +16,12 @@ export default function ProductItem({ item }: item) {
         <img
           src={`assets/menu/${item.img}`}
           alt={item.name}
-          className="object-cover w-full rounded-full h-36"
+          className="object-cover w-full rounded-full h-28 lg:h-36"
         />
       </div>
-      <h5 className="text-center font-bold">{item.name.toUpperCase()}</h5>
+      <h5 className="text-sm lg:text-base text-center font-bold">
+        {item.name.toUpperCase()}
+      </h5>
     </div>
   );
 }
