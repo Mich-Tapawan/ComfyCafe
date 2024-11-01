@@ -115,6 +115,10 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .nav-list {
+    gap: 1rem;
+  }
+
   .hero {
     top: 5vh;
   }
@@ -148,6 +152,10 @@ body {
 }
 
 @media (min-width: 1600px) {
+  .nav-list {
+    gap: 2rem;
+  }
+
   .hero {
     top: 12vh;
   }

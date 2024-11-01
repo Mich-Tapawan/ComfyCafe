@@ -49,33 +49,39 @@ export default function Navbar() {
       <ul
         className={`${
           isNavShown ? "flex" : "hidden"
-        } lg:flex flex-col lg:flex-row gap-8 h-fit`}
+        } nav-list lg:flex flex-col lg:flex-row top-full absolute left-[0%] bg-[#2e1e1e] w-full gap-10 py-10 lg:top-0 lg:relative lg:h-fit lg:bg-transparent lg:w-auto`}
       >
-        <li
-          className="hover:text-primary hover:bg-white rounded-xl px-4 text-center"
-          onClick={handleClick}
-        >
-          <Link to={"/"}>Home</Link>
+        <li onClick={handleClick} className="text-center w-full">
+          <Link
+            to={"/"}
+            className="hover:text-primary hover:bg-white rounded-xl px-[40%] py-2 text-center w-full lg:w-auto lg:px-4 lg:py-0"
+          >
+            Home
+          </Link>
         </li>
-        <li
-          className="hover:text-primary hover:bg-white rounded-xl px-4 text-center"
-          onClick={handleClick}
-        >
-          <Link to={"/menu"}>Menu</Link>
+        <li onClick={handleClick} className="text-center w-full">
+          <Link
+            to={"/menu"}
+            className="hover:text-primary hover:bg-white rounded-xl px-[40%] py-2 text-center w-full lg:w-auto lg:px-4 lg:py-0"
+          >
+            Menu
+          </Link>
         </li>
-        <li
-          className="hover:text-primary hover:bg-white rounded-xl px-4 text-center"
-          onClick={handleClick}
-        >
-          {" "}
-          <Link to={"/contact"}>Contact</Link>
+        <li onClick={handleClick} className=" text-center w-full">
+          <Link
+            to={"/contact"}
+            className="hover:text-primary hover:bg-white rounded-xl px-[38%] py-2 text-center w-full lg:w-auto lg:px-4 lg:py-0"
+          >
+            Contact
+          </Link>
         </li>
-        <li
-          className="hover:text-primary hover:bg-white rounded-xl px-4 text-center"
-          onClick={handleClick}
-        >
-          {" "}
-          <Link to={"/about"}>About</Link>
+        <li onClick={handleClick} className=" text-center w-full">
+          <Link
+            to={"/about"}
+            className="hover:text-primary hover:bg-white rounded-xl px-[40%] py-2 text-center w-full lg:w-auto lg:px-4 lg:py-0"
+          >
+            About
+          </Link>
         </li>
       </ul>
       <Burger onClick={toggleNav} />
