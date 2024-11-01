@@ -138,6 +138,10 @@ body {
     line-height: 3.5rem;
   }
 
+  .about img {
+    height: 400px;
+  }
+
   .about p {
     line-height: 3.5rem;
   }
@@ -150,6 +154,18 @@ body {
 
   .sec1 p {
     width: 45%;
+  }
+
+  .about > * {
+    flex-direction: row;
+  }
+
+  .about p {
+    width: 50%;
+  }
+
+  .about img {
+    height: auto;
   }
 
   .ftr-list {

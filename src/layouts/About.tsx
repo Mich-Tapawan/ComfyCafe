@@ -4,15 +4,15 @@ export default function About() {
   return (
     <>
       <div className="about h-fit text-white pt-32 lg:pt-44 pb-10 lg:pb-20 px-5 md:px-20 lg:px-36 flex flex-col gap-5">
-        <div className="bg-primary p-8 flex flex-col lg:flex-row gap-8 font-thin rounded-lg justify-center">
-          <div className="lg:w-2/5">
+        <div className="bg-primary p-8 flex flex-col gap-8 font-thin rounded-lg justify-center">
+          <div className="">
             <img
               src="/assets/family.png"
               alt=""
               className="object-cover w-full"
             />
           </div>
-          <p className="lg:w-1/2">
+          <p className="">
             Comfy Café was founded on May 17, 2023, with the belief that a great
             cup of coffee can do more than just start your day—it can create
             moments of comfort and community. With a passion for crafting
@@ -24,8 +24,8 @@ export default function About() {
             where everyone feels at home.
           </p>
         </div>
-        <div className="bg-primary p-8 flex flex-col-reverse lg:flex-row gap-8 font-thin rounded-lg justify-center">
-          <p className="lg:w-1/2">
+        <div className="bg-primary p-8 flex flex-col-reverse gap-8 font-thin rounded-lg justify-center">
+          <p className="">
             From the very beginning, Comfy Café has been about more than just
             coffee. We’ve carefully crafted our menu to include a selection of
             premium teas, fresh pastries, and artisanal treats to complement
@@ -36,7 +36,7 @@ export default function About() {
             memorable. Welcome to Comfy Café—a place where comfort and quality
             always come first.
           </p>
-          <div className="lg:w-2/5">
+          <div className="">
             <img
               src="assets/opening-image.jpg"
               alt=""
