@@ -78,7 +78,7 @@ body {
 }
 
 .Items::-webkit-scrollbar {
-  width: 15px;
+  width: 8px;
 }
 .Items::-webkit-scrollbar-track {
   background-color: #d8cb98;
@@ -112,6 +112,9 @@ body {
 }
 
 @media (min-width: 768px) {
+  .Items::-webkit-scrollbar {
+    width: 12px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -142,6 +145,10 @@ body {
     line-height: 3.5rem;
   }
 
+  .Items::-webkit-scrollbar {
+    width: 15px;
+  }
+
   .about img {
     height: 400px;
   }
@@ -162,6 +169,10 @@ body {
 
   .sec1 p {
     width: 45%;
+  }
+
+  .topbar {
+    display: none;
   }
 
   .sidebar {

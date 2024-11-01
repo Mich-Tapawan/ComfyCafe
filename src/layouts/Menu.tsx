@@ -3,6 +3,7 @@ import HotItems from "../components/HotItems";
 import SideBar from "../components/SideBar";
 import ProductList from "../components/ProductList";
 import { MenuContext } from "../contexts/MenuContext";
+import TopBar from "../components/TopBar";
 
 interface ProductItemType {
   _id: string;
@@ -30,6 +31,10 @@ export default function Menu() {
     allItems: [],
   });
   const [category, setCategory] = useState("");
+  const categories = {
+    beverages: ["COFFEE", "TEA", "FRAPPE", "SHAKE"],
+    desserts: ["DONUT", "BROWNY", "ICE CREAM", "PIE", "BAGEL"],
+  };
 
   // Fetch data to get all available items
   useEffect(() => {
@@ -50,35 +55,42 @@ export default function Menu() {
   }, []);
 
   return (
-    <div className="menu h-svh pt-24 pb-10 px-5 md:px-20 lg:px-36">
-      <div className="bg-secondary w-full h-full py-8 lg:py-14 px-4 md:px-10 lg:px-20 overflow-hidden rounded-3xl">
-        <div className="flex justify-between mb-10">
-          <h1 className="text-4xl lg:text-5xl font-bold items-center">MENU</h1>
-          <div className="w-10 lg:w-14">
-            <img
-              src="/assets/cart.png"
-              alt="cart"
-              className="object-cover w-full"
-            />
+    <MenuContext.Provider
+      value={{
+        onHotSection,
+        setOnHotSection,
+        productList,
+        setProductsList,
+        category,
+        setCategory,
+      }}
+    >
+      <div className="menu h-svh pt-24 pb-10 px-5 md:px-20 lg:px-36">
+        <div className="bg-secondary w-full h-full py-8 lg:py-14 px-4 md:px-10 lg:px-20 overflow-hidden rounded-3xl">
+          <div>
+            {" "}
+            <div className="flex justify-between mb-5 lg:mb-10">
+              <h1 className="text-4xl lg:text-5xl font-bold items-center">
+                MENU
+              </h1>
+              <div className="w-10 lg:w-14">
+                <img
+                  src="/assets/cart.png"
+                  alt="cart"
+                  className="object-cover w-full"
+                />
+              </div>
+            </div>
+            <TopBar list={categories} />
           </div>
-        </div>
-        <div className="flex gap-5 lg:gap-16">
-          <MenuContext.Provider
-            value={{
-              onHotSection,
-              setOnHotSection,
-              productList,
-              setProductsList,
-              category,
-              setCategory,
-            }}
-          >
-            <SideBar />
+
+          <div className="flex gap-5 lg:gap-16">
+            <SideBar list={categories} />
             <div className="menu-vl hidden"></div>
             {onHotSection ? <HotItems /> : <ProductList />}
-          </MenuContext.Provider>
+          </div>
         </div>
       </div>
-    </div>
+    </MenuContext.Provider>
   );
 }
