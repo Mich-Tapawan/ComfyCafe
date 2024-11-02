@@ -4,6 +4,7 @@ import SideBar from "../components/SideBar";
 import ProductList from "../components/ProductList";
 import { MenuContext } from "../contexts/MenuContext";
 import TopBar from "../components/TopBar";
+import SelectOrder from "../components/SelectOrder";
 
 interface ProductItemType {
   _id: string;
@@ -30,11 +31,15 @@ export default function Menu() {
     best: [],
     allItems: [],
   });
+
   const [category, setCategory] = useState("");
   const categories = {
     beverages: ["COFFEE", "TEA", "FRAPPE", "SHAKE"],
     desserts: ["DONUT", "BROWNY", "ICE CREAM", "PIE", "BAGEL"],
   };
+
+  const [clickedItem, setClickedItem] = useState(null);
+  const [isOrderTabVisible, setIsOrderTabVisible] = useState<boolean>(false);
 
   // Fetch data to get all available items
   useEffect(() => {
@@ -63,6 +68,8 @@ export default function Menu() {
         setProductsList,
         category,
         setCategory,
+        isOrderTabVisible,
+        setIsOrderTabVisible,
       }}
     >
       <div className="menu h-svh pt-24 pb-10 px-5 md:px-20 lg:px-36">
@@ -90,6 +97,7 @@ export default function Menu() {
             {onHotSection ? <HotItems /> : <ProductList />}
           </div>
         </div>
+        {isOrderTabVisible ? <SelectOrder name={"nice"} /> : null}
       </div>
     </MenuContext.Provider>
   );
