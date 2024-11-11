@@ -22,10 +22,12 @@ interface MenuContext {
   productList: ProductListData;
   category: string;
   isOrderTabVisible: boolean;
+  clickedItem: ProductItemType;
   setOnHotSection: Dispatch<SetStateAction<boolean>>;
   setProductsList: Dispatch<SetStateAction<ProductListData>>;
   setCategory: Dispatch<SetStateAction<string>>;
   setIsOrderTabVisible: Dispatch<SetStateAction<boolean>>;
+  setClickedItem: Dispatch<SetStateAction<ProductItemType>>;
 }
 
 export const MenuContext = createContext<MenuContext | undefined>(undefined);

@@ -88,6 +88,13 @@ body {
   background-color: var(--primary);
 }
 
+.ordertab {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .contact {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/assets/main-lights.jpg");

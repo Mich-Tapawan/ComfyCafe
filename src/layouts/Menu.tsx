@@ -25,6 +25,7 @@ interface ProductListData {
 
 export default function Menu() {
   const [onHotSection, setOnHotSection] = useState(true);
+
   const [productList, setProductsList] = useState<ProductListData>({
     sale: [],
     limited: [],
@@ -33,13 +34,23 @@ export default function Menu() {
   });
 
   const [category, setCategory] = useState("");
+
   const categories = {
     beverages: ["COFFEE", "TEA", "FRAPPE", "SHAKE"],
     desserts: ["DONUT", "BROWNY", "ICE CREAM", "PIE", "BAGEL"],
   };
 
-  const [clickedItem, setClickedItem] = useState(null);
-  const [isOrderTabVisible, setIsOrderTabVisible] = useState<boolean>(false);
+  const [clickedItem, setClickedItem] = useState<ProductItemType>({
+    _id: "",
+    name: "",
+    price: "",
+    category: "",
+    specialty: "",
+    availability: "",
+    img: "",
+  });
+
+  const [isOrderTabVisible, setIsOrderTabVisible] = useState<boolean>(true);
 
   // Fetch data to get all available items
   useEffect(() => {
@@ -70,6 +81,8 @@ export default function Menu() {
         setCategory,
         isOrderTabVisible,
         setIsOrderTabVisible,
+        clickedItem,
+        setClickedItem,
       }}
     >
       <div className="menu h-svh pt-24 pb-10 px-5 md:px-20 lg:px-36">
