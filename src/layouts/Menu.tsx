@@ -50,7 +50,7 @@ export default function Menu() {
     img: "",
   });
 
-  const [isOrderTabVisible, setIsOrderTabVisible] = useState<boolean>(true);
+  const [isOrderTabVisible, setIsOrderTabVisible] = useState<boolean>(false);
 
   // Fetch data to get all available items
   useEffect(() => {
