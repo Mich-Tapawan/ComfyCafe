@@ -6,6 +6,7 @@ import LearnMore from "../components/LearnMore";
 import ImageGrid from "../components/ImageGrid";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [pages, setPages] = useState(7);
@@ -38,26 +39,30 @@ export default function Home() {
               relax, and let us fuel your morning with the finest flavors.
             </p>
             <div className="mt-8">
-              <CtaButton
-                bgColor="bg-secondary"
-                textColor="text-primary"
-                paddingX="px-4"
-                paddingY="py-4"
-                custom="border-2 border-secondary"
-              >
-                MENU
-              </CtaButton>
-              <CtaButton
-                bgColor="transparent"
-                bgHover="hover:bg-white"
-                textColor="text-white"
-                textHover="hover:text-primary"
-                paddingX="px-4"
-                paddingY="py-4"
-                custom="border-2"
-              >
-                ABOUT
-              </CtaButton>
+              <Link to={"/menu"}>
+                <CtaButton
+                  bgColor="bg-secondary"
+                  textColor="text-primary"
+                  paddingX="px-4"
+                  paddingY="py-4"
+                  custom="border-2 border-secondary"
+                >
+                  MENU
+                </CtaButton>
+              </Link>
+              <Link to={"/about"}>
+                <CtaButton
+                  bgColor="transparent"
+                  bgHover="hover:bg-white"
+                  textColor="text-white"
+                  textHover="hover:text-primary"
+                  paddingX="px-4"
+                  paddingY="py-4"
+                  custom="border-2"
+                >
+                  ABOUT
+                </CtaButton>
+              </Link>
             </div>
             <SocialIcons custom="icons" lgDirection="lg:flex-col" />
           </div>
