@@ -88,7 +88,6 @@ export default function Menu() {
       <div className="menu h-svh pt-24 pb-10 px-5 md:px-20 lg:px-36">
         <div className="bg-secondary w-full h-full py-8 lg:py-14 px-4 md:px-10 lg:px-20 overflow-hidden rounded-3xl">
           <div>
-            {" "}
             <div className="flex justify-between mb-5 lg:mb-10">
               <h1 className="text-4xl lg:text-5xl font-bold items-center">
                 MENU
@@ -110,7 +109,14 @@ export default function Menu() {
             {onHotSection ? <HotItems /> : <ProductList />}
           </div>
         </div>
-        {isOrderTabVisible ? <SelectOrder name={"nice"} /> : null}
+        {isOrderTabVisible ? (
+          <SelectOrder
+            name={clickedItem.name}
+            img={clickedItem.img}
+            price={clickedItem.price}
+            category={clickedItem.category}
+          />
+        ) : null}
       </div>
     </MenuContext.Provider>
   );

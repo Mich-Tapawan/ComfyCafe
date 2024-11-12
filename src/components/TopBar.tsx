@@ -21,7 +21,6 @@ export default function TopBar({ list }: TopBarProps) {
 
   const handleClick = (key: string) => {
     const initialCategory = key === "beverages" ? "COFFEE" : "DONUT";
-    console.log(initialCategory);
     setCategory(initialCategory);
     setClickedCluster(key);
     setOnHotSection(false);

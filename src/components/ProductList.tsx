@@ -20,7 +20,15 @@ export default function ProductList() {
     <ul className="Items max-h-[60vh] flex flex-wrap gap-8 overflow-y-scroll">
       {items.map((item, index) => (
         <li key={index} className="w-fit">
-          <ProductItem item={item} />
+          <ProductItem
+            _id={item._id}
+            name={item.name}
+            img={item.img}
+            price={item.price}
+            category={item.category}
+            specialty={item.specialty}
+            availability={item.availability}
+          />
         </li>
       ))}
     </ul>

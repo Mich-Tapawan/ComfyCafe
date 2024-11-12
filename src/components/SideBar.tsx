@@ -20,7 +20,6 @@ export default function SideBar({ list }: SideBarProps) {
   const handleClick = (item: string) => {
     setOnHotSection(false);
     setCategory(item);
-    console.log("clicked on item: " + item);
   };
 
   return (
