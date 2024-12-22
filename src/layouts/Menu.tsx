@@ -4,7 +4,6 @@ import SideBar from "../components/SideBar";
 import ProductList from "../components/ProductList";
 import { MenuContext } from "../contexts/MenuContext";
 import TopBar from "../components/TopBar";
-import SelectOrder from "../components/SelectOrder";
 
 interface ProductItemType {
   _id: string;
@@ -37,7 +36,7 @@ export default function Menu() {
 
   const categories = {
     beverages: ["COFFEE", "TEA", "FRAPPE", "SHAKE"],
-    desserts: ["DONUT", "BROWNY", "ICE CREAM", "PIE", "BAGEL"],
+    desserts: ["DONUT", "BROWNY", "PIE", "BAGEL"],
   };
 
   const [clickedItem, setClickedItem] = useState<ProductItemType>({
@@ -109,14 +108,6 @@ export default function Menu() {
             {onHotSection ? <HotItems /> : <ProductList />}
           </div>
         </div>
-        {isOrderTabVisible ? (
-          <SelectOrder
-            name={clickedItem.name}
-            img={clickedItem.img}
-            price={clickedItem.price}
-            category={clickedItem.category}
-          />
-        ) : null}
       </div>
     </MenuContext.Provider>
   );

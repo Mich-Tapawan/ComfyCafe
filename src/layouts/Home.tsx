@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  const [pages, setPages] = useState(7);
+  const [pages, setPages] = useState(4.6);
 
   useEffect(() => {
     const updatePages = () => {
@@ -19,10 +19,9 @@ export default function Home() {
     };
 
     updatePages();
-
     window.addEventListener("resize", updatePages);
 
-    return window.removeEventListener("resize", updatePages);
+    return () => window.removeEventListener("resize", updatePages);
   }, []);
 
   return (
@@ -70,12 +69,8 @@ export default function Home() {
         <ParallaxLayer offset={1}>
           <Banner />
         </ParallaxLayer>
-        <ParallaxLayer offset={1.5}>
-          <div className=" w-full h-full py-36 px-5 md:px-20 lg:px-36 place-self-center ">
-            <div className="bg-primary w-full h-full"></div>
-          </div>
-        </ParallaxLayer>
-        <ParallaxLayer offset={2.5}>
+
+        <ParallaxLayer offset={2}>
           <LearnMore />
           <ImageGrid />
           <Footer />

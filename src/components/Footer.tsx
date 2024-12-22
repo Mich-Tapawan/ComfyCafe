@@ -2,7 +2,7 @@ import SocialIcons from "./SocialIcons";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary py-20 h-fit px-5 md:px-20 lg:px-36 text-white grid grid-cols-1 lg:grid-cols-6">
+    <footer className="bg-primary py-20 h-fit px-5 md:px-20 lg:min-h-96 lg:px-36 text-white grid grid-cols-1 lg:grid-cols-6">
       <div className="flex flex-col items-center text-center lg:items-start lg:text-start lg:col-span-3 gap-2 ">
         <SocialIcons custom="ftr-icons" />
         <p className="font-extralight" style={{ width: "70%" }}>

@@ -52,7 +52,7 @@ export default function ProductItem({
 
   return (
     <div
-      className="cursor-pointer"
+      className=""
       onClick={() =>
         handleClick({
           _id,
