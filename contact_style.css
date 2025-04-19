@@ -1,264 +1,266 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Inknut Antiqua', serif;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    user-select: none;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inknut Antiqua", serif;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  user-select: none;
 }
 
-#bg{
-    width: 100%;
-    height: 105%;
-    object-fit: cover;
-    position: absolute;
-    filter: brightness(0.5);
+#bg {
+  width: 100%;
+  height: 105%;
+  object-fit: cover;
+  position: absolute;
+  filter: brightness(0.5);
 }
 
-nav{
-    display: flex;
-    margin-right: 30px;
-    padding-top: 15px;
-    position: fixed;
-    color: #fff;
-    width: 100%;
-    z-index: 1000;
-    transition: 0.3s ease;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  color: #fff;
+  width: 100%;
+  z-index: 2000;
+  transition: 0.3s ease;
+  padding-inline: 5rem;
 }
 
-nav img{
-    margin-left: 22px;
-    position: relative;
-    width: 63px;
-    height: 63px;
-    transition: 0.3s ease;
-}
-nav h2{
-    padding-left: 20px;
-    font-size: 35px;
-    bottom: 15px;
-    position: relative;
-    font-family: 'Inknut Antiqua', serif;
-    font-weight: 400;
-    transition: 0.3s ease;
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-nav ul{
-    position: relative;
-    justify-content: space-between;
-    left: 44%;
-    float: right;
-    margin-right: 20px;
-
+.brand img {
+  width: 63px;
+  height: 63px;
+  transition: 0.3s ease;
 }
 
-nav ul li{
-    display: inline-block;
-    line-height: 65px;
-    margin: 0 30px;
+.brand h2 {
+  padding-left: 20px;
+  font-size: 35px;
+  bottom: 15px;
+  font-weight: 400;
+  transition: 0.3s ease;
 }
 
-nav ul li a{
-    color: white;
+nav ul {
+  height: fit-content;
+  display: flex;
+  gap: 1.5rem;
 }
 
-.upper{
-    background: #493d3d;
-    min-height: 100vh;
-    width: 100%;
-    color: #fff;
-    padding: 100px 30px;
-    display: flex;
-    justify-content: space-around;
+nav ul li a {
+  color: white;
+  padding-inline: 1rem;
+  border-radius: 20px;
 }
 
-.container{
-    position: relative;
-    display: inline-block;
-    width: 1000px;
-    display: flex;
-    padding: 0 20px;
+nav ul li a:hover {
+  color: brown;
+  background-color: #fff;
 }
 
-.container h1{
-    position: absolute;
-    font-size: 70px;
-    top: 20px;
+.upper {
+  background: #493d3d;
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+  padding: 100px 30px;
+  display: flex;
+  justify-content: space-around;
 }
 
-.container h4{
-    position: relative;
-    top: 170px;
-    width: 700px;
+.container {
+  position: relative;
+  display: inline-block;
+  width: 1000px;
+  display: flex;
+  padding: 0 20px;
 }
 
-#contactList{
-    position: absolute;
-    top: 440px;
+.container h1 {
+  position: absolute;
+  font-size: 70px;
+  top: 20px;
 }
 
-#contactList svg{
-    display: inline-block;
-    position: relative;
+.container h4 {
+  position: relative;
+  top: 170px;
+  width: 700px;
 }
 
-#contactList p{
-    display: inline-block;
-    position: relative;
-    font-size: 25px;
-    bottom: 14px;
-    padding-left: 10px;
-    font-family:Arial, Helvetica, sans-serif;
-    user-select: all;
+#contactList {
+  position: absolute;
+  top: 440px;
 }
 
-.contactUs{
-    position: relative;
-    width: 700px;
-    height: 604px;
-    background-color: #edf8bd;
-    border-radius: 20px;
-    margin-top: 26px;
-    margin-right: 44px;
-    padding-top: 20px;
-    display: inline-block;
+#contactList svg {
+  display: inline-block;
+  position: relative;
 }
 
-.contactUs input{
-    display: block;
-    position: relative;
-    width: 80%;
-    height: 58px;
-    margin: 0px 0px 30px 0px;
-    border-radius: 10px;
-    border-style: none;
-    box-shadow: 1px 4px 5px rgb(182, 182, 182);
-    padding-left: 20px;
-    outline: none;
+#contactList p {
+  display: inline-block;
+  position: relative;
+  font-size: 25px;
+  bottom: 14px;
+  padding-left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: all;
 }
 
-.contactUs h5{
-    position: relative;
-    color: #3B2929;
-    right: 33%;
+.contactUs {
+  position: relative;
+  width: 700px;
+  height: 604px;
+  background-color: #edf8bd;
+  border-radius: 20px;
+  margin-top: 26px;
+  margin-right: 44px;
+  padding-top: 20px;
+  display: inline-block;
 }
 
-#emailLabel{
-    right: 36%;
+.contactUs input {
+  display: block;
+  position: relative;
+  width: 80%;
+  height: 58px;
+  margin: 0px 0px 30px 0px;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: 1px 4px 5px rgb(182, 182, 182);
+  padding-left: 20px;
+  outline: none;
 }
 
-#messageLabel{
-    right: 22%;
+.contactUs h5 {
+  position: relative;
+  color: #3b2929;
+  right: 33%;
 }
 
-#message{
-    display: block;
-    position: relative;
-    width: 80%;
-    top: 4px;
-    height: 170px;
-    margin: 0px 0px 30px 0px;
-    border-radius: 10px;
-    border-style: none;
-    box-shadow: 1px 4px 5px rgb(182, 182, 182);
-    padding: 5px 20px;
-    outline: none;
-    bottom: 15px;
-    resize: none;
+#emailLabel {
+  right: 36%;
 }
 
-#submit{
-    display: block;
-    position: relative;
-    width: 40%;
-    height: 58px;
-    margin: 0px 0px 30px 0px;
-    background-color: #3B2929;
-    color: white;
-    cursor: pointer;
-    border-radius: 10px;
-    border-style: none;
-    box-shadow: 1px 4px 5px rgb(182, 182, 182);
-    padding: 5px 20px;
-    outline: none;
+#messageLabel {
+  right: 22%;
 }
 
-#submit:active{
-    background-color: white;
-    color: #3B2929;
+#message {
+  display: block;
+  position: relative;
+  width: 80%;
+  top: 4px;
+  height: 170px;
+  margin: 0px 0px 30px 0px;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: 1px 4px 5px rgb(182, 182, 182);
+  padding: 5px 20px;
+  outline: none;
+  bottom: 15px;
+  resize: none;
 }
 
-.success{
-    display: flex;
-    position: absolute;
-    bottom: 6px;
-    align-items: center;
-    left: 280px;
-    display: none;
+#submit {
+  display: block;
+  position: relative;
+  width: 40%;
+  height: 58px;
+  margin: 0px 0px 30px 0px;
+  background-color: #3b2929;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: 1px 4px 5px rgb(182, 182, 182);
+  padding: 5px 20px;
+  outline: none;
 }
 
-.success svg{
-    position: absolute;
-    display: inline-block;
-    left: -80px;
-    top: 6px;
+#submit:active {
+  background-color: white;
+  color: #3b2929;
 }
 
-.success h5{
-    position: relative;
-    display: inline-block;
+.success {
+  display: flex;
+  position: absolute;
+  bottom: 6px;
+  align-items: center;
+  left: 280px;
+  display: none;
 }
 
-.footer{    
-    width: 100%;
-    height: 230px;
-    background-color: #3B2929;
-    padding: 40px 20px;
-    position: relative;
+.success svg {
+  position: absolute;
+  display: inline-block;
+  left: -80px;
+  top: 6px;
 }
 
-.icons{
-    display: inline-block;
-    position: relative;
-    width: 55%;
-    height: 50px;
-    left: 30px;
-    margin-bottom: 20px;
+.success h5 {
+  position: relative;
+  display: inline-block;
 }
 
-.icons svg{
-    width: 57px;
-    height: 57px;
-    margin: 0 10px;
+.footer {
+  width: 100%;
+  height: 230px;
+  background-color: #3b2929;
+  padding: 40px 20px;
+  position: relative;
 }
 
-.footer h5{
-    position: relative;
-    left: 18px;
-    top: 15px;
-    color: white;
-    letter-spacing: 2px;
+.icons {
+  display: inline-block;
+  position: relative;
+  width: 55%;
+  height: 50px;
+  left: 30px;
+  margin-bottom: 20px;
 }
 
-.footer p{
-    position: relative;
-    left: 16px;
-    top: 15px;
-    color: rgb(152, 152, 152);
+.icons svg {
+  width: 57px;
+  height: 57px;
+  margin: 0 10px;
 }
 
-.footer-logo img{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    left: 89.8%;
-    bottom: 28%;
+.footer h5 {
+  position: relative;
+  left: 18px;
+  top: 15px;
+  color: white;
+  letter-spacing: 2px;
 }
 
-.footer-logo p{
-    position: absolute;
-    left: 89%;
-    top: 72%;
-    color: white;
+.footer p {
+  position: relative;
+  left: 16px;
+  top: 15px;
+  color: rgb(152, 152, 152);
+}
+
+.footer-logo img {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: 89.8%;
+  bottom: 28%;
+}
+
+.footer-logo p {
+  position: absolute;
+  left: 89%;
+  top: 72%;
+  color: white;
 }
