@@ -368,24 +368,7 @@ input[type="radio"]:checked + label {
 
 @media (max-width: 1491px) {
   .top h1 {
-    color: red;
-  }
-
-  #fixedNav img {
-    transform: translateX(-17vw);
-  }
-
-  #nav-name {
-    transform: translateX(-17vw);
-    font-size: 20px;
-  }
-
-  #page-links {
-    transform: translateX(-27vw);
-  }
-
-  #page-links li a {
-    margin: 0 0px;
+    font-size: clamp(2rem, 4vw, 2.8rem);
   }
 
   .container {
@@ -398,25 +381,7 @@ input[type="radio"]:checked + label {
 
 @media (max-width: 1280px) {
   .top h1 {
-    color: blue;
-  }
-
-  #fixedNav img {
-    transform: translateX(-13vw);
-  }
-
-  #nav-name {
-    transform: translateX(-13vw);
-    font-size: 20px;
-  }
-
-  #page-links {
-    transform: translateX(-31vw);
-  }
-
-  #page-links li a {
-    font-size: 15px;
-    margin: 0 0px;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
   }
 
   .container {
@@ -429,7 +394,7 @@ input[type="radio"]:checked + label {
 
 @media (max-width: 1024px) {
   .top h1 {
-    color: green;
+    color: #513b3b;
   }
 }
 

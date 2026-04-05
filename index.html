@@ -23,13 +23,25 @@
         <img src="Media/logo.png" alt="" id="logo" />
         <h2 id="nav-name">Comfy Café</h2>
       </div>
-
+      <button
+        type="button"
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="page-links"
+        aria-label="Open menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <ul id="page-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="pages/menu.html">Menu</a></li>
         <li><a href="pages/contact.html">Contacts</a></li>
         <li><a href="pages/aboutUs.html">About</a></li>
       </ul>
+      <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
     </nav>
 
     <div class="upper">
