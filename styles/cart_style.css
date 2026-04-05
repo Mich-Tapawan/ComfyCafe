@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inknut Antiqua", serif;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #493d3d;
+  color: #3b2929;
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "top top"
+    "side main";
+}
+
+.top-bar {
+  grid-area: top;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 1.5rem);
+  background: #3b2929;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-bar #logo {
+  width: clamp(40px, 10vw, 52px);
+  height: clamp(40px, 10vw, 52px);
+  object-fit: contain;
+}
+
+.top-bar h3 {
+  font-size: clamp(1rem, 3vw, 1.35rem);
+  font-weight: 400;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.top-bar a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.top-bar a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.top-bar .line {
+  flex-basis: 100%;
+  width: 100%;
+  height: 3px;
+  background: #eae9ba;
+  border-radius: 2px;
+  margin-top: 0.25rem;
+}
+
+.side-bar {
+  grid-area: side;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: clamp(1rem, 3vw, 1.5rem) 0.75rem;
+  background: #4c4141;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.box {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  font-size: clamp(0.65rem, 2vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.box:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.box.active {
+  background: #eae9ba;
+  color: #3b2929;
+}
+
+.view-order,
+.payment,
+.receipt {
+  grid-area: main;
+  display: none;
+  margin: clamp(1rem, 3vw, 2rem);
+  align-self: start;
+  justify-self: center;
+  width: calc(100% - 2 * clamp(1rem, 3vw, 2rem));
+  max-width: 560px;
+}
+
+.view-order.panel--active,
+.payment.panel--active,
+.receipt.panel--active {
+  display: block;
+}
+
+.view-order {
+  background: #eae9ba;
+  border-radius: 20px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+  min-height: 200px;
+}
+
+.view-order:empty::before {
+  content: "No items in your order yet. Add something from the menu.";
+  display: block;
+  color: #6e5252;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+  text-align: center;
+  padding: 2rem 0.5rem;
+}
+
+.payment {
+  background: #eae9ba;
+  border-radius: 20px;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+}
+
+.payment form > div {
+  margin-bottom: 1.25rem;
+}
+
+.payment h3 {
+  font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+  margin-bottom: 0.35rem;
+  color: #3b2929;
+}
+
+.payment input[type="text"] {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 2px solid rgba(59, 41, 41, 0.25);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+  margin-top: 0.25rem;
+}
+
+.payment input[type="text"]:focus {
+  border-color: #3b2929;
+}
+
+#payment-line2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 520px) {
+  #payment-line2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.method-container h4 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: #3b2929;
+}
+
+#method {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+#method img {
+  height: 36px;
+  width: auto;
+  max-width: 88px;
+  object-fit: contain;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #fff;
+  border: 2px solid transparent;
+}
+
+#method img.selected {
+  border-color: #3b2929;
+}
+
+.receipt {
+  background: #eae9ba;
+  border-radius: 20px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+}
+
+.receipt h3 {
+  color: #3b2929;
+  font-size: clamp(1.25rem, 4vw, 1.65rem);
+  margin-bottom: 1.25rem;
+}
+
+.receipt img {
+  width: min(100%, 200px);
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
+  border-radius: 8px;
+}
+
+#transID {
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  word-break: break-all;
+}
+
+#ty {
+  font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+  line-height: 1.65;
+  color: #555;
+  margin-bottom: 1.5rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#rcpt-return {
+  min-height: 48px;
+  padding: 0 2rem;
+  background: #3b2929;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#rcpt-return:hover {
+  background: #5c3d3d;
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "top"
+      "side"
+      "main";
+  }
+
+  .side-bar {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    gap: 0.35rem;
+    padding: 0.65rem 0.5rem;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .box {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.65rem 0.35rem;
+  }
+
+  .view-order,
+  .payment,
+  .receipt {
+    margin: 1rem;
+    width: calc(100% - 2rem);
+  }
+}
